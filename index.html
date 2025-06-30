@@ -1,114 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>CSMUN</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', sans-serif;
-    }
+    <meta charset="UTF-8">
+    <title>CSMUN</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
 
-    body, html {
-      height: 100%;
-    }
+        body,
+        html {
+            height: 100%;
+        }
 
-    body {
-      background: url(landing-bg.jpg) no-repeat center center/cover;
-      position: relative;
-      overflow: hidden;
-    }
+        body {
+            background: url(landing-bg.jpeg) no-repeat center center/cover;
+            position: relative;
+            overflow: hidden;
+        }
 
-    body::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-color: rgba(0, 0, 0, 0.8); /* 40% dark overlay */
-      backdrop-filter: blur(2.5px); /* 4px blur */
-      z-index: 0;
-    }
+        body::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(2.5px);
+            z-index: 0;
+        }
 
-    .container {
-      position: relative;
-      z-index: 1;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      text-align: center;
-    }
+        .container {
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
 
-    h1 {
-      font-size: 4rem;
-      margin-bottom: 20px;
-      color: orangered;
-    }
+        .card {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(6px);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+            padding: 5%;
+        }
 
-    .countdown {
-        margin: 10%;
-      font-size: 2rem;
-      display: flex;
-      gap: 20px;
-    }
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            color: orangered;
+        }
 
-    .countdown div {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+        h2 {
+            margin-bottom: 30px;
+        }
 
-    .countdown span {
-      font-size: 3rem;
-      font-weight: bold;
-    }
-    .seconds-text{
-        color: rgb(196, 196, 196);
-    }
-    .minutes-text{
-        color: rgb(230, 230, 230);
-    }
-  </style>
-  <link rel="icon" href="unlogo.png" type="image/png">
+        .countdown {
+            font-size: 2rem;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
 
+        .countdown div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .countdown span {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .seconds-text {
+            color: rgb(196, 196, 196);
+        }
+
+        .minutes-text {
+            color: rgb(230, 230, 230);
+        }
+    </style>
+    <link rel="icon" href="unlogo.png" type="image/png">
 </head>
+
 <body>
-    
-  <div class="container">
-    <img src="cslogo.png" alt="CSMUN Logo" style="position: absolute; top: 30px; left: 30px; width: 200px; z-index: 2;" />
-    <h1>CSMUN'25</h1>
-    <h2>Website coming soon</h2>
-    <div class="countdown">
-      <div><span id="days">00</span><div>Days</div></div>
-      <div><span id="hours">00</span><div>Hours</div></div>
-      <div class="minutes-text"><span id="minutes">00</span><div>Minutes</div></div>
-      <div class="seconds-text"><span id="seconds">00</span><div>Seconds</div></div>
+    <div class="container">
+        <img src="cslogo.png" alt="CSMUN Logo"
+            style="position: absolute; top: 30px; left: 30px; width: 200px; z-index: 2;" />
+        <div class="card">
+            <h1>CSMUN'25</h1>
+            <h2>Website coming soon</h2>
+            <div class="countdown">
+                <div><span id="days">00</span>
+                    <div>Days</div>
+                </div>
+                <div><span id="hours">00</span>
+                    <div>Hours</div>
+                </div>
+                <div class="minutes-text"><span id="minutes">00</span>
+                    <div>Minutes</div>
+                </div>
+                <div class="seconds-text"><span id="seconds">00</span>
+                    <div>Seconds</div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <script>
-    const endDate = new Date("2025-08-29T09:30:00").getTime();
+    <script>
+        const endDate = new Date("2025-08-29T09:30:00").getTime();
 
-    function updateCountdown() {
-      const now = new Date().getTime();
-      const diff = endDate - now;
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const diff = endDate - now;
 
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((diff / (1000 * 60)) % 60);
-      const seconds = Math.floor((diff / 1000) % 60);
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((diff / (1000 * 60)) % 60);
+            const seconds = Math.floor((diff / 1000) % 60);
 
-      document.getElementById("days").textContent = String(days).padStart(2, '0');
-      document.getElementById("hours").textContent = String(hours).padStart(2, '0');
-      document.getElementById("minutes").textContent = String(minutes).padStart(2, '0');
-      document.getElementById("seconds").textContent = String(seconds).padStart(2, '0');
-    }
+            document.getElementById("days").textContent = String(days).padStart(2, '0');
+            document.getElementById("hours").textContent = String(hours).padStart(2, '0');
+            document.getElementById("minutes").textContent = String(minutes).padStart(2, '0');
+            document.getElementById("seconds").textContent = String(seconds).padStart(2, '0');
+        }
 
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-  </script>
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
 </body>
+
 </html>
