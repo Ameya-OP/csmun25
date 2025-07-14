@@ -119,11 +119,13 @@ nav a:hover {
 }
 
 .hero-logo {
-  width: 200px;
+  width: 50%;
+  height: auto;
   margin-bottom: 20px;
   margin-top: 100px;
   filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.4));
   border-radius: 1000px;
+  
 }
 
 
@@ -175,4 +177,40 @@ nav a:hover {
   height: auto;
   border-radius: 8px;
   object-fit: cover;
+}
+
+.contact {
+  color: white;
+  background-color: #222222;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.contact-content {
+  max-width: 800px;
+  margin: auto;
+}
+
+.contact h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.contact ul {
+  list-style: none;
+  padding: 0;
+  font-size: 1.1em;
+}
+
+.contact ul li {
+  margin: 10px 0;
+}
+
+.contact a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+.contact a:hover {
+  text-decoration: underline;
 }
