@@ -2,141 +2,98 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>CSMUN</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', sans-serif;
-        }
-
-        body,
-        html {
-            height: 100%;
-        }
-
-        body {
-            background: url(landing-bg.jpeg) no-repeat center center/cover;
-            position: relative;
-            overflow: hidden;
-        }
-
-        body::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background-color: rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(2.5px);
-            z-index: 0;
-        }
-
-        .container {
-            position: relative;
-            z-index: 1;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-align: center;
-        }
-
-        .card {
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 40px;
-            border-radius: 20px;
-            backdrop-filter: blur(6px);
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
-            padding: 5%;
-        }
-
-        h1 {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            color: orangered;
-        }
-
-        h2 {
-            margin-bottom: 30px;
-        }
-
-        .countdown {
-            font-size: 2rem;
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-        }
-
-        .countdown div {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .countdown span {
-            font-size: 3rem;
-            font-weight: bold;
-        }
-
-        .seconds-text {
-            color: rgb(196, 196, 196);
-        }
-
-        .minutes-text {
-            color: rgb(230, 230, 230);
-        }
-    </style>
-    <link rel="icon" href="unlogo.png" type="image/png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSMUN '25</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-    <div class="container">
-        <img src="cslogo.png" alt="CSMUN Logo"
-            style="position: absolute; top: 30px; left: 30px; width: 200px; z-index: 2;" />
-        <div class="card">
-            <h1>CSMUN'25</h1>
-            <h2>Website coming soon</h2>
-            <div class="countdown">
-                <div><span id="days">00</span>
-                    <div>Days</div>
-                </div>
-                <div><span id="hours">00</span>
-                    <div>Hours</div>
-                </div>
-                <div class="minutes-text"><span id="minutes">00</span>
-                    <div>Minutes</div>
-                </div>
-                <div class="seconds-text"><span id="seconds">00</span>
-                    <div>Seconds</div>
-                </div>
-            </div>
-        </div>
+  <header>
+
+    <nav class="navbar">
+      <img src="images/cslogo.png" alt="CSMUN Logo" class="logo" />
+      <ul>
+        <li><a href="#">HOME</a></li>
+        <li><a href="soon.html">SECRETARIAT</a></li>
+        <li><a href="committees.html">COMMITTEES</a></li>
+        <li><a href="secretariat.html">FAQS</a></li>
+        <li><a href="https://forms.gle/g6KWR2vehb3CyYFn6" target="_blank">REGISTRATION</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+
+    <div class="content">
+      <img src="images/mun.png" alt="CSMUN Logo" class="hero-logo" />
+      <h1>CSMUN 25</h1>
+      <div class="heading-underline"></div>
+      <a href="https://forms.gle/YOUR_FORM_LINK" target="_blank" class="register-btn">
+        Register Now • 31st July- 2nd August 2025
+      </a>
+
     </div>
+  </section>
+  <section class="about">
+    <div class="about-content">
+      <h2>About CSMUN</h2>
+      <p>
+        CSMUN is the official Model United Nations conference hosted by Cornerstone School.
+        It is a platform for passionate delegates to engage in diplomacy, debate, and global problem-solving.
+        Join us this August as we simulate world-class committees, foster collaboration, and develop the leaders of
+        tomorrow.
+      </p>
+      
+    </div>
+    <!-- <div class="letter-card">
+      <div class="letter-left">
+        <h3>Letter from the Secretary-General</h3>
+        <p>
+          Dear Delegates,<br><br>
 
-    <script>
-        const endDate = new Date("2025-08-29T09:30:00").getTime();
 
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const diff = endDate - now;
+          Dear Delegates,
 
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-            const minutes = Math.floor((diff / (1000 * 60)) % 60);
-            const seconds = Math.floor((diff / 1000) % 60);
+          It is with immense pride and excitement that I welcome you to the Cornerstone Model United Nations 2025.
 
-            document.getElementById("days").textContent = String(days).padStart(2, '0');
-            document.getElementById("hours").textContent = String(hours).padStart(2, '0');
-            document.getElementById("minutes").textContent = String(minutes).padStart(2, '0');
-            document.getElementById("seconds").textContent = String(seconds).padStart(2, '0');
-        }
+          CSMUN has always stood as more than just a conference — it is a platform for ambitious minds to challenge
+          convention, engage in critical diplomacy, and grow into the leaders our world urgently needs. As
+          Secretary-General, I am honoured to steward this year’s edition, promising a meticulously curated experience
+          where debate is spirited, ideas are bold, and collaboration is at the heart of every committee.
+          <br>
+          <br>
+          Whether you're a seasoned delegate or stepping into committee for the first time, CSMUN 2025 is your stage to
+          speak, to lead, and to be heard. We’ve worked tirelessly to ensure this conference is not only intellectually
+          rigorous but also deeply memorable — a celebration of diplomacy, discourse, and diversity.
+          <br>
+          <br>
+          I cannot wait to witness the passion and perspective each of you will bring to the table. Here's to two days
+          of diplomacy, dialogue, and discovery.
+          <br>
+          <br>
+          Warm Regards<br>
+          <strong>Ameya Joshi</strong><br>
+          Secretary-General, CSMUN 2025
+        </p>
+      </div>
+      <div class="letter-right">
+        <img src="images/csmun-logo.png" alt="Secretary General" />
+      </div>
+    </div> -->
 
-        updateCountdown();
-        setInterval(updateCountdown, 1000);
-    </script>
+  </section>
+  <section class="contact">
+    <div class="contact-content">
+      <h2>Contact Us</h2>
+      <p>If you have any questions or need assistance, feel free to reach out!</p>
+      <ul>
+        <li><strong>Email:</strong> csmun@cornerstoneschool.edu.in</li>
+        <li><strong>Phone:</strong> +91 98765 43210</li>
+        <li><strong>Instagram:</strong> <a href="#" target="_blank">coming-soon</a></li>
+      </ul>
+    </div>
+  </section>
 </body>
 
 </html>

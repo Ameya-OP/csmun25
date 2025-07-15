@@ -1,0 +1,113 @@
+body {
+    background-color: #0b0e1a;
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5% 0.2%;
+    height: auto;
+    width: 92%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.705);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    position: fixed;
+    top: 3%;
+    z-index: 100;
+}
+.navbar img {
+    height: 80px;
+    object-fit: contain;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #d65600;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ff4c4c;
+}
+
+.committee-container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 60px 20px;
+}
+
+.committee-title {
+    margin-top: 7%;
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+section h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #2bd4c0;
+}
+
+.chair-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.chair-card {
+    background-color: #161b2f;
+    border-radius: 12px;
+    padding: 20px;
+    flex: 1 1 250px;
+    max-width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.chair-card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.chair-info h3 {
+    margin: 10px 0 5px;
+    color: #ffc107;
+}
+
+.chair-info p {
+    margin: 5px 0;
+}
+
